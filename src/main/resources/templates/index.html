@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>hexo-admin</title>
+    <link rel="stylesheet" th:href="@{../lib/mdui/css/mdui.min.css}">
+    <style>
+        .mdui-table-col-numeric {
+            min-width: 220px;
+        }
+    </style>
+</head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink">
+<header th:replace="common :: header"></header>
+<nav th:replace="common :: nav"></nav>
+<section class="mdui-container">
+    <div class="mdui-table-fluid">
+        <table class="mdui-table mdui-table-hoverable">
+            <thead>
+            <tr>
+                <th>文章名称</th>
+                <th>分类</th>
+                <th class="mdui-table-col-numeric">创建时间</th>
+                <th class="mdui-table-col-numeric">修改时间</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <!--/*@thymesVar id="fileList" type="java.util.List<top.itning.hexoadmin.entity.MarkDownFile>"*/-->
+            <tr th:each="file : ${fileList}">
+                <td><a target="_blank" th:href="${'editor/'+file.location}" th:text="${file.title}"></a></td>
+                <td th:text="${file.categories}">java ee</td>
+                <td th:text="${#dates.format(file.date, 'yyyy年MM月dd日 HH:mm:ss')}">2018年03月14日 18:23:25</td>
+                <td th:text="${#dates.format(file.updated, 'yyyy年MM月dd日 HH:mm:ss')}">2018年03月14日 18:23:25</td>
+                <td>
+                    <button class="mdui-btn mdui-ripple"><i class="mdui-icon material-icons">delete</i></button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+<script th:src="@{../lib/jquery/jquery.min.js}"></script>
+<script th:src="@{../lib/mdui/js/mdui.min.js}"></script>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

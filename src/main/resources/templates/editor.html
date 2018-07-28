@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>hexo-admin</title>
+    <link rel="stylesheet" th:href="@{../lib/mdui/css/mdui.min.css}">
+    <link rel="stylesheet" th:href="@{../lib/editormd/css/editormd.min.css}"/>
+</head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink">
+<header th:replace="common :: header"></header>
+<nav th:replace="common :: nav"></nav>
+<section class="mdui-container">
+    <div id="editormd">
+        <!--/*@thymesVar id="file" type="top.itning.hexoadmin.entity.MarkDownFile"*/-->
+        <textarea style="display:none;" title="" th:text="${file.content}"></textarea>
+    </div>
+    <button id="btn" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent"><i
+            class="mdui-icon material-icons">save</i></button>
+</section>
+<script th:src="@{../lib/jquery/jquery.min.js}"></script>
+<script th:src="@{../lib/mdui/js/mdui.min.js}"></script>
+<script th:src="@{../lib/editormd/editormd.min.js}"></script>
+<script th:src="@{../js/editor.js}"></script>
+</body>
+</html>
