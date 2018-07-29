@@ -7,7 +7,7 @@ function init() {
     editormd.emoji.path = "http://www.webpagefx.com/tools/emoji-cheat-sheet/graphics/emojis/";
     return editormd("editormd", {
         width: "100%",
-        height: 640,
+        autoHeight: true,
         emoji: true,
         path: "../lib/editormd/lib/",
         saveHTMLToTextarea: true
