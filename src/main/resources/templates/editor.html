@@ -12,10 +12,13 @@
 <header th:replace="common :: header"></header>
 <nav th:replace="common :: nav"></nav>
 <section class="mdui-container">
-    <div id="editormd">
+    <form th:action="@{/save}" method="post">
         <!--/*@thymesVar id="file" type="top.itning.hexoadmin.entity.MarkDownFile"*/-->
-        <textarea style="display:none;" title="" th:text="${file.content}"></textarea>
-    </div>
+        <input type="hidden" name="location" th:value="${file.location}">
+        <div id="editormd">
+            <textarea name="content" style="display:none;" title="" th:text="${file.content}"></textarea>
+        </div>
+    </form>
     <button id="btn" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent"><i
             class="mdui-icon material-icons">save</i></button>
 </section>
@@ -23,6 +26,6 @@
 <script th:src="@{../lib/mdui/js/mdui.min.js}"></script>
 <script th:src="@{../lib/editormd/editormd.min.js}"></script>
 <script th:src="@{../js/editor.js}"></script>
-<script th:src="@{./js/common.js}"></script>
+<script th:src="@{../js/common.js}"></script>
 </body>
 </html>

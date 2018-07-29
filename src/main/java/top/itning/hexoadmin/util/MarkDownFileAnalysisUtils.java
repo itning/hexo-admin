@@ -1,11 +1,13 @@
 package top.itning.hexoadmin.util;
 
+import com.google.common.base.CharMatcher;
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import top.itning.hexoadmin.entity.MarkDownFile;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.Charset;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -17,6 +19,7 @@ import java.util.Optional;
  * @author wangn
  */
 public class MarkDownFileAnalysisUtils {
+    private static final Logger logger = LoggerFactory.getLogger(MarkDownFileAnalysisUtils.class);
     /**
      * 扩展名
      */
@@ -37,9 +40,24 @@ public class MarkDownFileAnalysisUtils {
             throw new IllegalArgumentException("this file name not end with .md");
         }
         MarkDownFile newMarkDownFile = new MarkDownFile();
-        newMarkDownFile.setLocation(markDownFile.getName());
         try {
+            newMarkDownFile.setLocation(markDownFile.getName());
             BufferedReader bufferedReader = new BufferedReader(new FileReader(markDownFile));
+            analysisMarkDown(newMarkDownFile, bufferedReader);
+        } catch (FileNotFoundException e) {
+            logger.error("file not found error ", e);
+        }
+        return newMarkDownFile;
+    }
+
+    /**
+     * 解析MarkDown
+     *
+     * @param newMarkDownFile 实体
+     * @param bufferedReader  BufferedReader
+     */
+    private static void analysisMarkDown(MarkDownFile newMarkDownFile, BufferedReader bufferedReader) {
+        try {
             String newLine;
             while ((newLine = bufferedReader.readLine()) != null) {
                 if (newLine.startsWith("title")) {
@@ -57,9 +75,23 @@ public class MarkDownFileAnalysisUtils {
             }
             bufferedReader.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("error ", e);
         }
-        return newMarkDownFile;
+    }
+
+    /**
+     * 从给定的MarkDownFile实体中Content属性解析
+     *
+     * @param markDownFile 实体
+     * @return 解析完的MarkDownFile
+     */
+    public static MarkDownFile analysisMarkDownFromEntity(MarkDownFile markDownFile) {
+        if (StringUtils.isBlank(markDownFile.getContent())) {
+            return markDownFile;
+        }
+        BufferedReader br = new BufferedReader(new InputStreamReader(new ByteArrayInputStream(markDownFile.getContent().getBytes(Charset.forName("utf8"))), Charset.forName("utf8")));
+        analysisMarkDown(markDownFile, br);
+        return markDownFile;
     }
 
     /**
@@ -75,7 +107,7 @@ public class MarkDownFileAnalysisUtils {
         if (index == -1 || index + 1 == line.length()) {
             return Optional.empty();
         }
-        return Optional.of(line.substring(index + 2));
+        return Optional.of(StringUtils.trim(CharMatcher.is('\'').trimFrom(line.substring(index + 2))));
     }
 
     /**

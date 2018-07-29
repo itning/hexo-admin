@@ -29,4 +29,11 @@ public interface FileService {
      * 备份文件
      */
     void backupMarkDownFiles();
+
+    /**
+     * 保存文件或更新文件
+     *
+     * @param markDownFile MarkDownFile
+     */
+    void saveMarkDownFile(MarkDownFile markDownFile);
 }

@@ -15,6 +15,6 @@ public class HexoAdminApplicationTests {
 
     @Test
     public void contextLoads() {
-        fileService.backupMarkDownFiles();
+
     }
 }

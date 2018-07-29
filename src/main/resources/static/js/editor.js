@@ -1,5 +1,8 @@
 'use strict';
 
+/**
+ *初始化编辑器
+ */
 function init() {
     editormd.emoji.path = "http://www.webpagefx.com/tools/emoji-cheat-sheet/graphics/emojis/";
     return editormd("editormd", {
@@ -14,7 +17,15 @@ function init() {
 $(function () {
     let testEditor = init();
     $('#btn').click(function () {
-        alert(testEditor.getMarkdown())
+        mdui.confirm(testEditor.getHTML(), '确认',
+            function () {
+                document.forms[0].submit();
+            },
+            function () {
+
+            }
+        );
+
     });
     //testEditor.getMarkdown();       // 获取 Markdown 源码
     //testEditor.getHTML();           // 获取 Textarea 保存的 HTML 源码
