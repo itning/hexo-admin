@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import top.itning.hexoadmin.entity.MarkDownFile;
 import top.itning.hexoadmin.service.FileService;
 
 /**
@@ -34,7 +35,8 @@ public class FrameController {
     }
 
     @GetMapping("/newPost")
-    public String newPost() {
+    public String newPost(Model model) {
+        model.addAttribute("file", new MarkDownFile());
         return "editor";
     }
 }

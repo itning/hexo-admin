@@ -23,6 +23,14 @@
     </div>
     <ul class="mdui-list mdui-card-content" mdui-collapse="{accordion: true}">
         <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">format_list_numbered</i>
+            <a th:href="@{/}" class="mdui-list-item-content">所有文章</a>
+        </li>
+        <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">fiber_new</i>
+            <a th:href="@{/newPost}" class="mdui-list-item-content">新文章</a>
+        </li>
+        <li class="mdui-list-item mdui-ripple">
             <label class="mdui-switch">
                 <input type="checkbox" id="night_mode"/>
                 <i class="mdui-switch-icon"></i>
