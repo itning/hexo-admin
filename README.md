@@ -13,6 +13,6 @@
 
 > 项目完善中
 
-![](.\pic\index.png)
-![](.\pic\new_post.png)
-![](.\pic\update.png)
+![index](https://github.com/itning/hexo-admin/blob/master/pic/index.png)
+![new_post](https://github.com/itning/hexo-admin/blob/master/pic/new_post.png)
+![update](https://github.com/itning/hexo-admin/blob/master/pic/update.png)
