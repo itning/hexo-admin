@@ -143,4 +143,16 @@ public class FileServiceImpl implements FileService {
         FILE_LIST.clear();
         getFiles(new File(userProps.getMarkDownPath()), FILE_LIST, EXTENSION_NAME);
     }
+
+    @Override
+    public void delete(String location) {
+        long count = FILE_LIST.stream()
+                .filter(file -> file.getName().equals(location))
+                .map(File::delete).filter(f -> !f).count();
+        if (count != 0) {
+            logger.warn("没删除干净");
+        }
+        FILE_LIST.clear();
+        getFiles(new File(userProps.getMarkDownPath()), FILE_LIST, EXTENSION_NAME);
+    }
 }

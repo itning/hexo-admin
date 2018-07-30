@@ -31,7 +31,9 @@
                 <td th:text="${#dates.format(file.date, 'yyyy年MM月dd日 HH:mm:ss')}">2018年03月14日 18:23:25</td>
                 <td th:text="${#dates.format(file.updated, 'yyyy年MM月dd日 HH:mm:ss')}">2018年03月14日 18:23:25</td>
                 <td>
-                    <button class="mdui-btn mdui-ripple"><i class="mdui-icon material-icons">delete</i></button>
+                    <button onclick="deletePost(this)" th:data-location="${file.location}" class="mdui-btn mdui-ripple">
+                        <i
+                                class="mdui-icon material-icons">delete</i></button>
                 </td>
             </tr>
             </tbody>
@@ -41,5 +43,20 @@
 <script th:src="@{../lib/jquery/jquery.min.js}"></script>
 <script th:src="@{../lib/mdui/js/mdui.min.js}"></script>
 <script th:src="@{./js/common.js}"></script>
+<script>
+    function deletePost(location) {
+        let locationValue = $(location).data('location');
+        mdui.confirm(locationValue, '确认',
+            function () {
+                $.post("/delete", {location: locationValue}, function (data) {
+                    window.location.reload();
+                });
+            },
+            function () {
+
+            }
+        );
+    }
+</script>
 </body>
 </html>

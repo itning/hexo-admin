@@ -36,4 +36,11 @@ public interface FileService {
      * @param markDownFile MarkDownFile
      */
     void saveMarkDownFile(MarkDownFile markDownFile);
+
+    /**
+     * 删除文件
+     *
+     * @param location 路径
+     */
+    void delete(String location);
 }
