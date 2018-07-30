@@ -11,9 +11,29 @@
 [![language](https://img.shields.io/badge/language-JAVA-orange.svg)]()
 
 ## 如何使用
-1. clone project
-2. 修改application.yml文件
-3. 启动(默认端口 8080)
+1. [获取最新Releases](https://github.com/itning/hexo-admin/releases)
+
+2. 通过 
+
+   ```shell
+   java -jar .\hexo-admin-1.0.0-release.jar --user-props.db-file-path=C:\Users\wangn\Desktop\c.db --user-props.mark-down-path=C:\Users\wangn\Desktop\post
+   ```
+
+3. user-props.db-file-path 表示备份文件位置(随便写)
+
+4. user-props.mark-down-path 表示文章目录 G:\xxx\itningblog\source\\_posts\
+
+5. 浏览器打开 [http://localhost:8080/](http://localhost:8080/)
+## 如何
+
+1. 更改端口
+
+   ```shell
+   java -jar xxx.jar --server.port=80
+   ```
+
+   
+
 ## 预览
 ![index](https://github.com/itning/hexo-admin/blob/master/pic/index.png)
 ![new_post](https://github.com/itning/hexo-admin/blob/master/pic/new_post.png)
