@@ -8,14 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import top.itning.hexoadmin.config.CommandWebSocket;
 import top.itning.hexoadmin.entity.MarkDownFile;
-import top.itning.hexoadmin.entity.UserProps;
 import top.itning.hexoadmin.service.FileService;
-import top.itning.hexoadmin.util.ExecCommand;
 
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -30,18 +25,9 @@ public class FrameController {
 
     private final FileService fileService;
 
-    private final ExecCommand execCommand;
-
-    private final UserProps userProps;
-
-    private final CommandWebSocket commandWebSocket;
-
     @Autowired
-    public FrameController(FileService fileService, ExecCommand execCommand, UserProps userProps, CommandWebSocket commandWebSocket) {
+    public FrameController(FileService fileService) {
         this.fileService = fileService;
-        this.execCommand = execCommand;
-        this.userProps = userProps;
-        this.commandWebSocket = commandWebSocket;
     }
 
     @GetMapping("/")
@@ -78,33 +64,5 @@ public class FrameController {
     public String save(MarkDownFile markDownFile) {
         fileService.saveMarkDownFile(markDownFile);
         return "redirect:/";
-    }
-
-    @GetMapping("/message")
-    public String message() {
-        return "message";
-    }
-
-    @GetMapping("/sendMsg")
-    @ResponseBody
-    public void send(String msg) throws IOException {
-        switch (msg) {
-            case "server": {
-                try {
-                    commandWebSocket.sendMessage("run [hexo server]");
-                    execCommand.execute(userProps.getHexoCmdPath() + " server", userProps.getWorkingDir());
-                } catch (InterruptedException e) {
-                    logger.error("server start error ", e);
-                    commandWebSocket.sendMessage(e.toString());
-                }
-                break;
-            }
-            case "close_now": {
-                execCommand.shutdownNow();
-                commandWebSocket.sendMessage("shutdownNow");
-                break;
-            }
-            default:
-        }
     }
 }
