@@ -10,9 +10,11 @@
 [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/itning/hexo-admin.svg)]()
 [![language](https://img.shields.io/badge/language-JAVA-orange.svg)]()
 
-
-> 项目完善中
-
+## 如何使用
+1. clone project
+2. 修改application.yml文件
+3. 启动(默认端口 8080)
+## 预览
 ![index](https://github.com/itning/hexo-admin/blob/master/pic/index.png)
 ![new_post](https://github.com/itning/hexo-admin/blob/master/pic/new_post.png)
 ![update](https://github.com/itning/hexo-admin/blob/master/pic/update.png)
