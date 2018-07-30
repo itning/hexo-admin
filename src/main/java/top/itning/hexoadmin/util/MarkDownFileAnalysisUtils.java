@@ -8,6 +8,7 @@ import top.itning.hexoadmin.entity.MarkDownFile;
 
 import java.io.*;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -42,7 +43,7 @@ public class MarkDownFileAnalysisUtils {
         MarkDownFile newMarkDownFile = new MarkDownFile();
         try {
             newMarkDownFile.setLocation(markDownFile.getName());
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(markDownFile));
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(markDownFile), StandardCharsets.UTF_8));
             analysisMarkDown(newMarkDownFile, bufferedReader);
         } catch (FileNotFoundException e) {
             logger.error("file not found error ", e);
