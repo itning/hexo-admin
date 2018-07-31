@@ -10,6 +10,25 @@
 [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/itning/hexo-admin.svg)]()
 [![language](https://img.shields.io/badge/language-JAVA-orange.svg)]()
 
+## 介绍
+
+hexo是一个优秀的开源博客系统，但是后端文章管理方面只能写好MarkDown后放在文件夹中，很不方便，所以才有了这个项目。
+
+项目使用JAVA语言开发，使用Netty作为内嵌服务器，备份文章选用sqllite数据库实现。
+
+## 拓展
+
+[windows 平台下 脚本](https://github.com/itning/hexo-admin/tree/master/cmd)
+
+[阿里云VPS搭建自己的Hexo博客](https://segmentfault.com/a/1190000005723321)
+
+## 实现功能
+1. 写新文章
+2. 更新文章
+3. 删除文章
+4. 备份文章(使用sqlite数据库)
+5. 夜间模式
+
 ## 如何使用
 1. [获取最新Releases](https://github.com/itning/hexo-admin/releases)
 
@@ -31,10 +50,20 @@
    ```shell
    java -jar xxx.jar --server.port=80
    ```
-
-   
-
 ## 预览
+
+- 主页
 ![index](https://github.com/itning/hexo-admin/blob/master/pic/index.png)
-![new_post](https://github.com/itning/hexo-admin/blob/master/pic/new_post.png)
-![update](https://github.com/itning/hexo-admin/blob/master/pic/update.png)
+- 新文章
+![new](https://github.com/itning/hexo-admin/blob/master/pic/new.png)
+- 修改
+![editor](https://github.com/itning/hexo-admin/blob/master/pic/editor.png)
+![editor_sure](https://github.com/itning/hexo-admin/blob/master/pic/editor_sure.png)
+- 删除
+![delete](https://github.com/itning/hexo-admin/blob/master/pic/delete.png)
+- 夜间模式
+![black](https://github.com/itning/hexo-admin/blob/master/pic/black.png)
+- 手机端效果
+![phone_index](https://github.com/itning/hexo-admin/blob/master/pic/phone_index.png)
+![phone_nav](https://github.com/itning/hexo-admin/blob/master/pic/phone_nav.png)
+![phone_editor](https://github.com/itning/hexo-admin/blob/master/pic/phone_editor.png)
