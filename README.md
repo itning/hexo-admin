@@ -64,6 +64,7 @@ hexo是一个优秀的开源博客系统，但是后端文章管理方面只能�
 - 夜间模式
 ![black](https://github.com/itning/hexo-admin/blob/master/pic/black.png)
 - 手机端效果
+
 ![phone_index](https://github.com/itning/hexo-admin/blob/master/pic/phone_index.png)
 ![phone_nav](https://github.com/itning/hexo-admin/blob/master/pic/phone_nav.png)
 ![phone_editor](https://github.com/itning/hexo-admin/blob/master/pic/phone_editor.png)
