@@ -1,16 +1,17 @@
 # Hexo 后台管理
 
-[![GitHub stars](https://img.shields.io/github/stars/itning/hexo-admin.svg)](https://github.com/itning/hexo-admin/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/itning/hexo-admin.svg)](https://github.com/itning/hexo-admin/network)
-[![GitHub watchers](https://img.shields.io/github/watchers/itning/hexo-admin.svg?style=social&label=Watch)]()
-[![GitHub followers](https://img.shields.io/github/followers/itning.svg?style=social&label=Follow)]()
-[![GitHub issues](https://img.shields.io/github/issues/itning/hexo-admin.svg)](https://github.com/itning/hexo-admin/issues)
+[![GitHub stars](https://img.shields.io/github/stars/itning/hexo-admin.svg?style=social&label=Stars)](https://github.com/itning/hexo-admin/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/itning/hexo-admin.svg?style=social&label=Fork)](https://github.com/itning/hexo-admin/network/members)
+[![GitHub watchers](https://img.shields.io/github/watchers/itning/hexo-admin.svg?style=social&label=Watch)](https://github.com/itning/hexo-admin/watchers)
+[![GitHub followers](https://img.shields.io/github/followers/itning.svg?style=social&label=Follow)](https://github.com/itning?tab=followers)
 
+[![GitHub issues](https://img.shields.io/github/issues/itning/hexo-admin.svg)](https://github.com/itning/hexo-admin/issues)
 [![GitHub license](https://img.shields.io/github/license/itning/hexo-admin.svg)](https://github.com/itning/hexo-admin/blob/master/LICENSE)
-[![GitHub last commit](https://img.shields.io/github/last-commit/itning/hexo-admin.svg)]()
-[![GitHub release](https://img.shields.io/github/release/itning/hexo-admin.svg)]()
-[![GitHub repo size in bytes](https://img.shields.io/github/repo-size/itning/hexo-admin.svg)]()
-[![language](https://img.shields.io/badge/language-JAVA-orange.svg)]()
+[![GitHub last commit](https://img.shields.io/github/last-commit/itning/hexo-admin.svg)](https://github.com/itning/hexo-admin/commits)
+[![GitHub release](https://img.shields.io/github/release/itning/hexo-admin.svg)](https://github.com/itning/hexo-admin/releases)
+[![GitHub repo size in bytes](https://img.shields.io/github/repo-size/itning/hexo-admin.svg)](https://github.com/itning/hexo-admin)
+[![HitCount](http://hits.dwyl.io/itning/hexo-admin.svg)](http://hits.dwyl.io/itning/hexo-admin)
+[![language](https://img.shields.io/badge/language-JAVA-green.svg)](https://github.com/itning/hexo-admin)
 
 ## 介绍
 
